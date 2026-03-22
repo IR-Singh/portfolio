@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaac Robin Singh | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f172a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+}
+
+nav h2 {
+    color: #38bdf8;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #94a3b8;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+/* Cards */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills */
+.skills span {
+    display: inline-block;
+    background: #38bdf8;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+/* Contact */
+.contact a {
+    display: block;
+    margin: 10px 0;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    margin-top: 40px;
+}
+
+/* Fade animation */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <h2>Isaac</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <h1>Hi, I'm <span>Isaac Robin Singh</span></h1>
+    <p>B.Tech IT Student | Aspiring Developer</p>
+</div>
+
+<!-- About -->
+<section id="about" class="hidden">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate B.Tech Information Technology student currently in my 3rd year.
+        I have a strong interest in web development and programming. I enjoy building
+        practical solutions and continuously improving my technical skills to grow as a developer.
+    </p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="hidden">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>HTML (Basic)</span>
+        <span>Python (Basic)</span>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="hidden">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Crop Yield Optimization</h3>
+        <p>
+            This project helps farmers estimate crop yield and profit based on farmland size.
+            It analyzes field dimensions and predicts production and expected market value,
+            helping farmers make better decisions.
+        </p>
+    </div>
+
+</section>
+
+<!-- Contact -->
+<section id="contact" class="hidden contact">
+    <h2>Contact</h2>
+    <a href="mailto:isaacrsinghv@gmail.com">📧 isaacrsinghv@gmail.com</a>
+    <a href="tel:8122539665">📱 8122539665</a>
+    <a href="https://www.linkedin.com/in/isaac-robin-singh-v-3350573ab" target="_blank">LinkedIn</a>
+    <a href="https://github.com/IR-Singh" target="_blank">GitHub</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Isaac Robin Singh</p>
+</footer>
+
+<script>
+const hiddenElements = document.querySelectorAll('.hidden');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+hiddenElements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
